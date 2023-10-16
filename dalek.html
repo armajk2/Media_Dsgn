@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dalek.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <title>Dalek</title>
+
+</head>
+<body>
+    <img src="./pic/dalek chained.jpeg" alt="" class="dd" id="hidden-image" onclick="showTextbox()">
+
+    <div class="textbox6" id="textbox16" onclick="showTextbox1()">
+       <a> WE MUST EXTERMINATE HUMAN
+        <BR>THEY KILLED ALL THE NAUTRES
+            <BR>EXTERMINATE
+                <BR>EXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMIN<BR>ATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERM<BR>INATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINAT<BR>EEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEX<BR>TERMINATEEXTERMINATEEXTERMINATE<BR>EXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMIN<BR>ATEEXTERMINATE</a>
+    </div>
+
+
+    <div class="textbox7" id="textbox17" onclick="showTextbox2()">
+        <a>EXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATE<br>EXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATE<br>EXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATE<br>EXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATE<br>WHY DID YOU DESTROY THEMEXTERMINATEEXTERMINATEEXTERMINATE<br>EXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATE<br>EXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATEEXTERMINATE</a>
+        </div>
+
+        <div class="textbox8" id="textbox18" onclick="showTextbox3()">
+            <a href="./tardis inside.html">
+                <img src="./pic/tardis.png" alt="" id="tardis"></a>
+        </div>
+
+
+    <img class="vault" src="./pic/The_Vault.png" alt="">
+    <div id="containter"></div>
+    <div class="daleks">
+        <img src="./pic/davv.png" alt="" class="stop-animation davv" id="stop">
+        <img src="" alt="">
+    </div>
+    <div class="container"></div>
+
+        <div class="contain" id="textbox1">
+                 Stop the Attack by finding Davros 
+        </div>
+       
+   </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            const stopAnimationImage = document.querySelector('.stop-animation');
+            const davvImage = document.querySelector('.davv');
+            const hiddenImage = document.querySelector('.hidden-image');
+
+
+            const imageIntervals = [];
+            davvImage.addEventListener('click', function() {
+    davvImage.style.visibility = 'hidden'; // Hide the davv image
+    setTimeout(function() {
+    const hiddenImage = document.getElementById('hidden-image');
+    hiddenImage.style.visibility = 'visible';
+  }, 2000);
+  });
+  
+            const images = [
+                { src: './pic/d1.png', width: 200, height: 200 },
+                { src: './pic/d1.png', width: 100, height: 100 },
+                { src: './pic/d2.png', width: 100, height: 100 },
+                { src: './pic/d3.png', width: 100, height: 100 },
+                { src: './pic/d4.png', width: 100, height: 100 },
+                { src: './pic/d2.png', width: 100, height: 100 },
+                { src: './pic/d3.png', width: 100, height: 100 },
+                { src: './pic/d4.png', width: 100, height: 200 },
+                { src: './pic/d2.png', width: 100, height: 250 },
+                { src: './pic/d3.png', width: 100, height: 100 },
+                { src: './pic/d4.png', width: 100, height: 200 },
+                { src: './pic/d2.png', width: 100, height: 100 },
+                { src: './pic/d2.png', width: 100, height: 200 },
+                { src: './pic/d3.png', width: 100, height: 100 },
+                { src: './pic/d5.png', width: 100, height: 200 },
+                // and so on...
+            ];
+
+            images.forEach(function(imageInfo) {
+                const image = new Image();
+                image.src = imageInfo.src;
+                image.alt = 'Image';
+                image.classList.add('image');
+                container.appendChild(image);
+
+                const intervalId = moveImage(image, imageInfo);
+                imageIntervals.push(intervalId);
+
+                // Apply custom width and height
+                image.style.width = imageInfo.width + 'px';
+                image.style.height = imageInfo.height + 'px';
+            });
+
+            stopAnimationImage.addEventListener('click', function() {
+                imageIntervals.forEach(function(intervalId) {
+                    clearInterval(intervalId);
+                });
+            });
+
+            davvImage.addEventListener('click', function() {
+                clearInterval(davvImage.intervalId);
+                const targetX = 700; // Specify the desired X coordinate
+                const targetY = 300; // Specify the desired Y coordinate
+                animateToMiddleAndGrow(davvImage, targetX, targetY);
+            });
+
+            function moveImage(image, imageInfo) {
+  const containerWidth = window.innerWidth;
+  const containerHeight = window.innerHeight;
+
+  const maxWidth = containerWidth - imageInfo.width;
+  const maxHeight = containerHeight - imageInfo.height;
+
+  let x = getRandomInt(0, maxWidth);
+  let y = getRandomInt(0, maxHeight);
+  let dx = getRandomInt(-2, 2);
+  let dy = getRandomInt(-2, 2);
+
+  const intervalId = setInterval(function() {
+    x += dx;
+    y += dy;
+
+    if (x < 0 || x > maxWidth) {
+      dx = -dx; // Reverse the horizontal direction
+    }
+
+    if (y < 0 || y > maxHeight) {
+      dy = -dy; // Reverse the vertical direction
+    }
+
+    image.style.left = x + 'px';
+    image.style.top = y + 'px';
+  }, 3);
+
+  return intervalId;
+}
+
+
+
+
+
+            function animateToMiddleAndGrow(image) {
+    const containerWidth = window.innerWidth;
+    const containerHeight = window.innerHeight;
+
+    const targetX = (containerWidth - image.width) / 2;
+    const targetY = (containerHeight - image.height) / 2;
+
+    const targetWidth = image.width * 4;
+    const targetHeight = image.height * 4;
+
+    let x = parseInt(image.style.left);
+    let y = parseInt(image.style.top);
+    let width = image.width;
+    let height = image.height;
+
+    const animationId = setInterval(function() {
+        const dx = (1000 - x) / 50;
+        const dy = (600 - y) / 50;
+        const dWidth = (targetWidth - width) / 50;
+        const dHeight = (targetHeight - height) / 50;
+
+        x += dx;
+        y += dy;
+        width += dWidth;
+        height += dHeight;
+
+        image.style.left = x + 'px';
+        image.style.top = y + 'px';
+        image.style.width = width + 'px';
+        image.style.height = height + 'px';
+
+        if (Math.abs(targetX - x) < 1 && Math.abs(targetY - y) < 1) {
+            clearInterval(animationId);
+        }
+    }, 10);
+
+    image.intervalId = animationId;
+}
+
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+        });
+    </script>
+
+<script>
+    const movingImage = document.getElementById('stop');
+
+    movingImage.addEventListener('click', function() {
+        movingImage.classList.add('stopped');
+      textbox1.classList.add('hidden')
+      textbox2.classList.add('hidden')
+    });
+
+
+    
+   
+  </script>
+
+
+<script>
+    function showTextbox() {
+      var textbox = document.getElementById("textbox16");
+      if (textbox.style.display === "none") {
+        textbox.style.display = "block";
+      } else {
+        textbox.style.display = "none";
+      }
+    }
+  </script>
+
+
+<script>
+    function showTextbox1() {
+      var textbox = document.getElementById("textbox17");
+      if (textbox.style.display === "none") {
+        textbox.style.display = "block";
+      } else {
+        textbox.style.display = "none";
+      }
+    }
+  </script>
+
+<script>
+    function showTextbox2() {
+      var textbox = document.getElementById("textbox18");
+      if (textbox.style.display === "none") {
+        textbox.style.display = "block";
+      } else {
+        textbox.style.display = "none";
+      }
+    }
+  </script>
+
+
+
+
+
+</body>
+    </html>

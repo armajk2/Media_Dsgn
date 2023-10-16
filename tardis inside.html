@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARDIS</title>
+    <link rel="stylesheet" href="./css/2pgstyle.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+
+</head>
+<body>
+    
+    <div class="pb">
+      <div class="po">POLICE</div>
+      <div class="pc">PUBLIC<BR>CALL</div>
+      <div class="Bx">BOX</div>
+    
+    </div>
+
+    <div class="hid">Choose <br>the<br>
+       Episode </div>
+
+    <img class="inside" src="./pic/bg.png" alt="">
+    
+    <!-- <a href="blink.html"> -->
+
+    <!-- <img src="./pic/wing.png" alt="" class="blink" id="blink"> -->
+
+   
+    <img src="./pic/mask1.png "alt="" class="mummy">
+    <img src="./pic/mask2.png" alt="" class="mummy2">
+    <img src="./pic/poster 2.png" alt="" class="dalek">
+    <img src="./pic/poster1.png" alt="" class="dalek1">
+
+
+
+        <img id="blink" src="./pic/wing.png" alt="이미지">
+
+        <img id="blink3" src="./pic/wing2.png" alt="이미지">
+        <img id="blink4" src="./pic/wing2.png" alt="이미지">
+
+        <img id="blink1" src="./pic/wing2.png" alt="이미지">
+        <img id="blink2" src="./pic/wing2.png" alt="이미지">
+
+
+        <div id="overlay"> </div>
+        <div id="textBox"> </div>
+
+
+
+        <script>
+            const blinkImageElement = document.getElementById('blink');
+const mummyImageElement = document.querySelector('.mummy2');
+const dalekImageElement = document.querySelector('.dalek');
+const overlayElement = document.getElementById('overlay');
+const textBoxElement = document.getElementById('textBox');
+
+let isBoxVisible = false;
+
+blinkImageElement.addEventListener('click', function() {
+  if (!isBoxVisible) {
+    createTextBox(2007);
+    isBoxVisible = true;
+  }
+});
+
+mummyImageElement.addEventListener('click', function() {
+  if (!isBoxVisible) {
+    createTextBox(2030);
+    isBoxVisible = true;
+  }
+});
+
+dalekImageElement.addEventListener('click', function() {
+  if (!isBoxVisible) {
+    createTextBox(2005);
+    isBoxVisible = true;
+  }
+});
+
+function createTextBox(resultNumber) {
+  overlayElement.style.display = 'block';
+  textBoxElement.style.display = 'block';
+
+  const numbers = generateRandomNumbers(15);
+  let currentIndex = 0;
+
+  const intervalId = setInterval(function() {
+    if (currentIndex >= numbers.length) {
+      textBoxElement.textContent = resultNumber;
+      clearInterval(intervalId);
+      textBoxElement.addEventListener('click', function() {
+        if (resultNumber === 2007) {
+          window.location.href = './blink.html';
+        } else if (resultNumber === 2030) {
+          window.location.href = './emtpy.html';
+        } else if (resultNumber === 2005) {
+          window.location.href = './dalek.html';
+        }
+      });
+    } else {
+      textBoxElement.textContent = numbers[currentIndex];
+      currentIndex++;
+    }
+  }, 100);
+}
+
+function generateRandomNumbers(count) {
+  const numbers = [];
+  for (let i = 0; i < count; i++) {
+    numbers.push(getRandomNumber(1500, 2500));
+  }
+  return numbers;
+}
+
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+          </script>
+  
+</body>
+</html>
+
+
+
+
+
+
+

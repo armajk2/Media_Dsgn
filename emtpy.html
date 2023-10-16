@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Empty Child</title>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/empty.css">
+  <link rel="stylesheet" href="./css/normalize.css">
+</head>
+
+
+<body>
+  <div id="typing-text"></div>
+
+  <div id="textbox-container">
+    <div class="textbox" id="textbox1">
+      London in 2030, after the Ecosystem destructed, people cannot survive without a gas mask.
+      </div>
+    <div class="textbox hidden" id="textbox2">The Doctor tries to find a reason of why and how this happened.
+      <p> Rose discovers a young boy wearing a gas mask on a nearby roof.</p>
+
+      </div>
+    <div class="textbox hidden" id="textbox3">
+      Rose: Are you all right up there? 
+        <p>A young boy: Mummy?</p>
+    </div>
+    <div class="textbox hidden" id="textbox4">
+      Rose: What?. Just hang on there kid. Don't move, we can fix this.
+      <p>A young boy: Mummy?</p>
+    </div>
+
+    <div class="textbox hidden" id="textbox5">
+      <a href="./boyrunning.html">
+      <img src="./pic/mask2 kid.png" alt="" id="kid"> </a>
+      <img src="./pic/roof1.png" alt="" class="mask1">
+      <img src="./pic/roof2.png" alt="" class="mask2">
+      <img src="./pic/roof5.png" alt="" class="mask4">
+
+      <img src="./pic/roof4.png" alt="" class="mask3" onclick="showTextbox()">
+    </div>
+    <div class="textbox6" id="textbox16" onclick="showTextbox1()">
+     I want THE FRESH AIR...
+    </div>
+    <div class="textbox7" id="textbox17" onclick="showTextbox2()" >
+      PLEASE TAKE THIS MASK OFF...!!!
+     </div>
+     <div class="textbox8" id="textbox18" onclick="showTextbox3()">
+      MUMMY
+    </div>
+
+
+</table>
+  </div>
+  <img class="london" src="./pic/london bg.jpeg" alt=""> </img>
+  
+ 
+
+<script>
+const textBoxes = document.querySelectorAll('.textbox');
+
+function showNextTextBox(currentIndex) {
+  const currentTextBox = textBoxes[currentIndex];
+  const nextTextBox = textBoxes[currentIndex + 1];
+
+  if (currentTextBox && nextTextBox) {
+    currentTextBox.classList.remove('visible');
+    currentTextBox.classList.add('hidden');
+    nextTextBox.classList.remove('hidden');
+    nextTextBox.classList.add('visible');
+
+    if (currentIndex === 3) {
+      const londonImage = document.querySelector('.london');
+      londonImage.style.visibility = 'hidden';
+    }
+  }
+}
+
+textBoxes[0].classList.add('visible');
+
+for (let i = 0; i < textBoxes.length; i++) {
+  textBoxes[i].addEventListener('click', function () {
+    showNextTextBox(i);
+  });
+}
+  
+  </script>
+
+<script>
+  function showTextbox() {
+    var textbox = document.getElementById("textbox16");
+    if (textbox.style.display === "none") {
+      textbox.style.display = "block";
+    } else {
+      textbox.style.display = "none";
+    }
+  }
+</script>
+ 
+<script>
+  function showTextbox1() {
+    var textbox = document.getElementById("textbox17");
+    if (textbox.style.display === "none") {
+      textbox.style.display = "block";
+    } else {
+      textbox.style.display = "none";
+    }
+  }
+</script>
+
+<script>
+  function showTextbox2() {
+    var textbox = document.getElementById("textbox18");
+    if (textbox.style.display === "none") {
+      textbox.style.display = "block";
+    } else {
+      textbox.style.display = "none";
+    }
+  }
+</script>
+
+<script>
+  function showTextbox3() {
+    var textbox = document.getElementById("kid");
+    if (textbox.style.display === "none") {
+      textbox.style.display = "block";
+
+    } else {
+      textbox.style.display = "none";
+    }
+  }
+</script>
+ 
+
+
+</body>
+</html>
+
+
+
+

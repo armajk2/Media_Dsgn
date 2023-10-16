@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/blink.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <title>BLINK</title>
+</head>
+<body>
+  <div class="black-screen"></div>
+
+  <a href="./tardis inside.html">
+    <img src="./pic/tardis.png" alt="" class="run">
+  </a>
+
+  <div id="picture-container">
+    <img src="./pic/t1.png" alt="" class="hidden-picture" id="t1">
+    <img src="./pic/t3.png" alt="" class="hidden-picture" id="t2">
+    <img src="./pic/t2.png" alt="" class="hidden-picture" id="t3">
+    <img src="./pic/t4.png" alt="" class="hidden-picture" id="t4">
+    <img src="./pic/Trash carts.png" alt="" class="hidden-picture" id="t5">
+    <img src="./pic/ang1.png" alt="" class="hidden-picture" id="t6">
+    <img src="./pic/t5.png" alt="" class="hidden-picture" id="t7">
+    <img src="./pic/t6.png" alt="" class="hidden-picture" id="t8">
+    <img src="./pic/a5.png" alt="" class="hidden-picture" id="t9">
+
+  </div>
+
+<div class="textbox" id="">
+  <p>Closing eyes isn't going to change the reality</p>
+</div>
+
+
+  <img class="church" src="./pic/church.png" alt="">
+
+  <div class="video-container">
+    <iframe id="youtube-player" src="https://www.youtube.com/embed/jKXLkWrBo7o?start=6&autoplay=1&enablejsapi=1" allowfullscreen frameborder="0"></iframe>
+  </div>
+
+  <script>
+    var player;
+    var videoEnded = false;
+
+    // YouTube API로부터 이벤트가 발생할 때 호출되는 함수
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('youtube-player', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    // 동영상 플레이어 상태 변경 이벤트 처리
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.ENDED) {
+        videoEnded = true;
+        hideVideo();
+      }
+    }
+
+    // 동영상 숨기기
+    function hideVideo() {
+      if (videoEnded) {
+        var videoContainer = document.querySelector('.video-container');
+        videoContainer.style.display = 'none';
+        setTimeout(startTypingEffect, 2000); // Start typing effect after 2 seconds
+      }
+    }
+
+    
+
+    // YouTube iframe API 스크립트 동적으로 로드
+    (function() {
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    })();
+  </script>
+  
+
+  <script>
+   var intervalId;
+        var hiddenPictures = document.querySelectorAll('.hidden-picture');
+        var revealedPictures = 0;
+        var isScreenBlack = false;
+
+        function toggleScreen() {
+            var body = document.querySelector('body');
+
+            if (!isScreenBlack) {
+                body.classList.add('black-screen');
+                isScreenBlack = true;
+                setTimeout(function () {
+                    body.classList.remove('black-screen');
+                    isScreenBlack = false;
+                    revealNextPictures(); // Reveal the next picture when the screen is toggled
+                    if (revealedPictures >= hiddenPictures.length) {
+                        clearInterval(intervalId);
+                    }
+                }, 1000);
+            } else {
+                revealNextPictures(); // Reveal the next picture when the screen is toggled
+                if (revealedPictures >= hiddenPictures.length) {
+                    clearInterval(intervalId);
+                }
+            }
+        }
+
+        function revealNextPictures() {
+            var remainingPictures = hiddenPictures.length - revealedPictures;
+            var picturesToReveal = Math.min(remainingPictures, 1);
+
+            for (var i = 0; i < picturesToReveal; i++) {
+                hiddenPictures[revealedPictures].style.display = 'block';
+                revealedPictures++;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                intervalId = setInterval(toggleScreen, 2000);
+            }, 6000);
+        });
+  </script>
+
+
+
+  <script>
+let t5 = document.getElementById("t5");
+
+
+t5.onmousedown = function (event) {
+  //ê¸°ëŠ¥
+  let shiftX = event.clientX - t5.getBoundingClientRect().left;
+  let shiftY = event.clientY - t5.getBoundingClientRect().top;
+
+
+  
+
+  document.onmousemove = function (event) {
+    t5.style.left = event.pageX - shiftX + "px";
+    t5.style.top = event.pageY - shiftY + "px";
+    check();
+  };
+
+  t5.onmouseup = function () {
+    document.onmousemove = null;
+    t5.onmouseup = null;
+  };
+};
+  </script>
+<script>
+  var t9 = document.getElementById("t9");
+var textbox = document.querySelector(".textbox");
+
+t9.addEventListener("mouseover", function () {
+  textbox.style.display = "block";
+});
+
+t9.addEventListener("mouseout", function () {
+  textbox.style.display = "none";
+});
+</script>
+</body>
+</html>

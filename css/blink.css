@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'Doctor';
+    src: url(./Doctor-Who.ttf);
+  }
+
+html,body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+.church {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+
+.video-container {
+    position: relative;
+    width: 70%;
+    padding-top: 80%;
+    margin: 0 auto;
+    z-index: 4;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 4;
+  }
+  
+  .text-container {
+    cursor: pointer;
+  }
+
+.text1{
+        position: absolute;
+        margin: 0;
+        justify-content: center;
+        left: 10px;
+        top: 0;
+        align-items: end;
+        color: black;
+        font-size: 10pt;
+}
+
+
+ .run{
+  width: 10vh;
+  bottom: 40%;
+  right: 5%;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+ }
+
+
+.hidden-picture {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+#t1 {
+  width: 50vh;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+}
+
+#t3 {
+  width: 100vh;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+#t2 {
+  width: 80vh;
+  bottom: 0;
+  left: 20vh;
+  z-index: 3;
+}
+
+#t4{ 
+  width: 100vh;
+  left: 30%;
+  bottom: 0;
+  z-index: 3;
+}
+
+#t5{
+  width: 15vh;
+  bottom: 40%;
+  right: 4%;
+  z-index: 3;
+  cursor: grab;
+}
+
+#t6{
+  height: 70vh;
+  bottom:10%;
+  left: 20%;
+  transform: rotate(15deg);
+  z-index: 2;
+
+}
+
+#t7{
+  height: 60vh;
+  bottom:5%;
+  left: 35%;
+z-index: 1;
+transform: rotate(-15deg);
+
+}
+
+#t8{
+  height: 40vh;
+  bottom:10%;
+  right: 5%;
+  z-index: 2;
+}
+
+#t9{
+  height: 50vh;
+  bottom:40%;
+  right: 10%;
+  z-index: 1;
+}
+
+
+ .textbox {
+  align-items: center;
+  position: absolute;
+  color: red;
+  font-size: 15vh;
+  padding: 10vh;
+  z-index: 5;
+  display: none;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'DOCTOR';
+}
+
+
+
+
+.revealed {
+  display: block;
+}
+
+.black-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 1s;
+}
+
+.hidden-picture {
+  display: none;
+}
+.black-screen .hidden-picture {
+  display: none;
+}
+

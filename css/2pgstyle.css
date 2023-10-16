@@ -1,0 +1,234 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(15, 7, 84) ;
+}
+
+@font-face {
+    font-family: 'Doctor';
+    src: url(./Doctor-Who.ttf);
+  }
+
+/* .inside{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+} */
+
+.pb{
+    text-align: center;
+    font-size: 3vh;
+    display:flex;
+    margin: 2vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    right: 50%;
+    background-color: black;
+    align-items: center;  
+    cursor: pointer;
+}
+
+.hid {
+     display: none; 
+    position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30vh;
+      height: 25vh;
+      background-color: white;
+      border: 1vh solid blue;
+      text-align: center;
+      font-size: 7vh;
+      font-family: Arial, Helvetica, sans-serif;
+    z-index: 10;
+}
+
+.pb:hover + .hid {
+    display: block;
+}
+
+.po{
+    text-align: center;
+    width: 35%;
+    text-align:center;
+    right: 100%;
+    margin-right: 15vh;
+}
+
+.pc{
+    font-size: 2.5vh;
+    width:20%;
+    text-align:center;
+    margin-right: 10px;
+    line-height: 3vh;
+}
+
+
+.Bx{
+    width:30%;
+    margin-left:9%;
+}
+
+
+.inside {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76%;
+    height: 80%;
+    background-color: black;
+}
+
+
+.dalek{   
+    position: absolute;
+    display: flex;
+    bottom: 39%;
+    height: 12vh;
+    left: 31%;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+  transition: opacity 0.3 ease;
+}
+
+.dalek:hover{
+    opacity:1;
+
+}
+.dalek1{   
+    position: absolute;
+    display: flex;
+    bottom: 39%;
+    height: 12vh;
+    left: 31%;
+    cursor: pointer;
+}
+
+
+#blink {
+    position: fixed;
+    display: flex;
+    bottom: 20%;
+    left: 2%;   
+    cursor: pointer;
+    height: 20vh;
+    transform: scaleX(-1);
+    opacity: 0;
+    transition: opacity 0.3 ease;
+    z-index: 1;
+}
+
+#blink:hover{
+    opacity:1;
+}
+
+
+#blink1 {
+    position: fixed;
+    display: flex;
+    bottom: 20%;
+    right:2%;   
+    height: 20vh;
+}
+
+#blink2 {
+    position: fixed;
+    display: flex;
+    top: 20%;
+    right:2%;   
+    height: 20vh;
+}
+
+#blink3 {
+    position: fixed;
+    display: flex;
+    top: 20%;
+    left:2%;   
+    height: 20vh;
+    transform: scaleX(-1);
+}
+
+#blink4 {
+    position: fixed;
+    display: flex;
+    bottom: 20%;
+    left: 2%;  
+    height: 20vh;
+    transform: scaleX(-1);
+}
+
+
+.mummy {
+    position: absolute;
+    bottom: 17%;
+    right: 20%;  
+    height: 20vh;
+    transform: rotate(50deg);
+    cursor: pointer; 
+}
+
+.mummy2 {
+    position: absolute;
+    bottom: 17%;
+    right: 20%;  
+    height: 20vh;
+    transform: rotate(50deg);
+    cursor: pointer; 
+    opacity: 0;
+    transition: opacity 0.3 ease;
+    z-index: 1;
+}
+
+.mummy2:hover{
+    opacity:1;
+}
+
+
+/* @media {
+    .blink {
+        width: 10%}
+    .mummy{
+        width: 10%;
+    }
+    .dalek{
+        width: 10%;
+    }
+} */
+
+#textBox {
+    position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 23vh;
+      height: 5vh;
+      background-color: white;
+      border: 1vh solid blue;
+      text-align: end;
+      line-height: 0%;
+      padding-top: 6vh;
+      font-size: 15vh;
+      display: none;
+      font-family: 'Doctor';
+      cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}

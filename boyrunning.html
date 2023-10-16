@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/runaway.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+  <title>RUNAWAY</title>
+</head>
+
+<body>
+
+  
+
+
+    <div class="narrative" id="activateButton"> 
+      <text class="a" id="text1">
+        I find a way to recover Ecosystem.<br>
+        But we should proceed without them touching us. 
+      </text>
+     
+    </div>
+
+
+    <img id="mask1" class="hidden" src="./pic/Layer 1.png" alt="">
+    <img id="mask2" class="hidden" src="./pic/gas1.png" alt="">
+    <img id="mask3" class="hidden" src="./pic/gas2.png" alt="">
+    <img id="mask4" class="hidden" src="./pic/gas3.png" alt="">
+
+
+  <img src="./pic/bd1.png" alt="" class="hidd" id="bd1">
+  <img src="./pic/bd2.png" alt="" class="hidd" id="bd2">
+
+   
+    <img class="bbg" src="./pic/대공습.jpeg" alt="">  
+
+
+  </div>
+    <div class="textbox visible" id="textbox1">
+      <img src="./pic/solution1.png" alt="" id="imm">
+    </div>
+    <div class="textbox" id="textbox2">
+      <img src="./pic/2.png" alt="" id="imm">
+    </div>
+    <div class="textbox" id="textbox3"> 
+    <img src="./pic/3.png" alt="" id="imm">
+  </div>
+    <div class="textbox" id="textbox4"> 
+      <img src="./pic/4.png" alt="" id="imm">
+    </div>
+    <div class="textbox" id="textbox5">
+      <img src="./pic/5.png" id="imm" alt= >
+    </a>
+  </div>
+  <div class="textbox" id="textbox6">
+    <a href="./tardis inside.html">
+    <img src="./pic/tardis.png" id="mask" alt= >
+  </a>
+</div>
+
+
+  <div id="cursor"></div>
+  <div id="overlay"></div>
+  <div id="popup">
+    <a href="./boyrunning.html">
+    <img src="./pic/kid point.webp" alt="Popup Image" id=popupimage></a>
+    <p>You could have</p>
+    <p>saved the EARTH</p>
+  </div>
+
+
+
+
+  <script>
+
+
+
+
+var activateButton = document.getElementById('activateButton');
+activateButton.addEventListener('click', function() {
+  activateButton.style.display = 'none';
+  cursorElement.style.display = 'block'; // 파랑색 커서 표시
+  document.addEventListener('mousemove', handleMouseMove); // 마우스 이벤트 처리
+  mask1.classList.remove('hidden');
+  mask2.classList.remove('hidden');
+  mask3.classList.remove('hidden');
+  mask4.classList.remove('hidden');
+  textbox1.classList.remove('hidden1');
+  bd1.classList.remove('hidd')
+  bd2.classList.remove('hidd')
+
+});
+
+
+// Hide the textbox1 initially
+textbox1.classList.add('hidden1');
+
+
+
+
+var cursorElement = document.getElementById('cursor');
+var obstacleElements = document.querySelectorAll('.hidden');
+var overlayElement = document.getElementById('overlay');
+var popupElement = document.getElementById('popup');
+var isCollided = false;
+
+function handleCollision() {
+  overlayElement.style.display = 'block';
+  setTimeout(function() {
+    popupElement.style.display = 'block';
+  }, 2000);
+  isCollided = true;
+}
+
+function handleMouseMove(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+
+  cursorElement.style.left = x + 'px';
+  cursorElement.style.top = y + 'px';
+
+  for (var i = 0; i < obstacleElements.length; i++) {
+    var obstacleRect = obstacleElements[i].getBoundingClientRect();
+    var cursorRect = cursorElement.getBoundingClientRect();
+
+    if (
+      cursorRect.left < obstacleRect.right &&
+      cursorRect.right > obstacleRect.left &&
+      cursorRect.top < obstacleRect.bottom &&
+      cursorRect.bottom > obstacleRect.top
+    ) {
+      if (!isCollided) {
+        handleCollision();
+      }
+    } else {
+      isCollided = false;
+    }
+  }
+}
+
+document.addEventListener('mousemove', handleMouseMove);
+
+
+  </script>
+
+
+
+<script src="./jss/run.js"></script>
+
+
+</body>
+</html>

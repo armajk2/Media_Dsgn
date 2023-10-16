@@ -1,0 +1,325 @@
+@font-face {
+    font-family: 'Doctor';
+    src: url(./Doctor-Who.ttf);
+  }
+
+.body {
+    margin: 30;
+    padding: 0;
+    display: center;
+    overflow: hidden;
+
+  }
+
+.bbg {  position: absolute;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.textbox {
+  display: none;
+  position: absolute;
+  align-items: center;
+  padding: 20px ;
+  font-size: 17pt;   
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#bd1{
+  position: absolute;
+  height: 55vh;
+  z-index: 1;
+  right: 0%;
+  top: 10%;
+}
+
+#bd2{
+  position: absolute;
+  height: 40vh;
+  z-index: 1;
+  left: 2%;
+  bottom: 2%;
+  z-index: 3;
+}
+
+
+.hidd{
+  display: none;
+}
+
+.narrative {
+ position: fixed;
+ top: 90%;
+ left: 20%;
+ transform: translate(-50%,-50%);
+  color: white;
+  font-size: 5vh;
+  z-index: 1;
+  border: 1vh solid rgb(158, 0, 0);
+  background-color: black;
+  text-align: left;
+  padding: 2vh;
+}
+
+
+
+.a{
+  font-size: 4vh;
+  margin:0;
+
+}
+
+p {
+    font-family: 'Doctor';
+    font-size: 100pt;
+     animation: blink-effect 1.5s step-end infinite;
+}
+
+@keyframes blink-effect {
+  80%{
+    opacity: 0;
+  }
+}
+
+
+.hidden {
+    display: none;
+}
+
+#mask1 {
+    position: absolute;
+    width: 15vh;
+    z-index: 3;
+    bottom: 20%;
+    left: 10%;
+   animation: rotate 4s linear infinite;
+   transform-origin: bottom left;
+}
+
+
+@keyframes rotate{
+  100% {transform:rotate(360deg)}
+    
+}
+
+
+
+#mask2 {
+    position: absolute;
+    height: 20vh;
+    right: 0;
+    z-index: 1;
+    animation: moveDiagonally 4s linear infinite;
+}
+
+@keyframes moveDiagonally{
+  0%{
+    transform:translate(0,0);
+  }
+  50%{
+    transform:translate(-500px,700px);
+  }
+  100%{
+    transform: translate(0,0);
+  }
+}
+
+#mask3 {
+    position: fixed;
+    width: 15vh;
+    top: 50%;
+    left: 50%;
+    translate: (-50%,-50%);
+    z-index: 2;
+    animation: moveUpDown 2s infinite alternate;
+}
+@keyframes moveUpDown{
+    0% {top:50px}
+    100%{top:400px
+    }
+}
+
+#mask4 {
+  position: fixed;
+  width: 13vh;
+  top: 10%;
+  left: 15%;
+  translate: (-50%,-50%);
+  z-index: 2;
+  animation: moveHorizontally 2s linear infinite;
+}
+
+@keyframes moveHorizontally{
+  0%{
+    transform:translateX(0);
+  }
+  50%{
+    transform:translateX(700px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+  }
+
+
+#activateButton{
+    position: absolute;
+    align-items: left;
+    justify-content: center;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+
+
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%); /* Position in the middle of the cursor */
+  display: none; /* Initially hidden */
+}
+
+
+
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: none;
+    opacity: 1;
+    z-index: 4;
+    /* transition: opacity 1s ease-in-out; */
+  }
+
+  #popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    display: none;
+    z-index: 10;
+    text-align: center;
+    background: black;
+  }
+
+  
+  #popup p {
+    color: white;
+    font-size: 4vh;
+    align-items: center;
+    font-kerning: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+.textbox {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+ #tardis {
+  animation: none;
+ }
+.visible {
+  display: block;
+}
+
+.hidden1 {
+  display: none;
+}
+
+
+
+#textbox5{
+  position: absolute;
+  top: 10px;
+  right: 10%;
+  width: 300px;
+  height: 150px;
+}
+
+#kid {
+      width: 50px;
+      cursor: pointer;
+}
+
+#textbox1{
+  left: 25%;
+  top: 40%;
+  width: 15vh;
+  cursor: pointer;
+}
+
+#first {
+  width: 100px;
+  border-radius: 30%;
+}
+
+#textbox2{
+  right: 30px;
+  bottom: 80px;
+  width: 300px;
+  height: 150px;
+}
+#imm {
+  width: 15vh;
+  border-radius: 30%;
+}
+
+#textbox3{
+  left: 20%;
+  bottom: 50%;
+  width: 300px;
+  height: 100px;
+}
+
+#textbox4{
+  right: 20%;
+  top:10%;  
+  width: 300px;
+  height: 150px;
+  z-index: 3;
+}
+
+#textbox5{
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  width: 300px;
+  height: 150px;
+}
+
+
+#textbox6{
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  height: 150px;
+}
+
+#mask {
+      width: 100px;
+      cursor: pointer;
+      animation: none;
+}
+

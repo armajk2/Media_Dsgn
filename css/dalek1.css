@@ -1,0 +1,207 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+
+}
+@font-face {
+    font-family: 'Doctor';
+    src: url(./Doctor-Who.ttf);
+}
+
+
+.vault {
+    position: absolute;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.image {
+    position: absolute;
+}
+
+.stop-animation {
+    position: absolute;
+    width: 100px;
+    right: 0%;
+    animation: moveVertical 4s infinite alternate;
+    cursor: pointer;
+    z-index: 1;
+}
+.stopped {
+    animation-play-state: paused;
+  }
+
+
+.hidden{
+    display: none;
+    animation: none;
+    color: black;
+}
+
+
+
+@keyframes moveVertical {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: calc(100vh - 100px);
+    }
+}
+
+.contain {
+    position: absolute;
+    text-align: left;
+    padding: 10px;
+    bottom: 10%;
+}
+
+#hidden-image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    z-index: 10;
+    visibility: hidden;
+    cursor: pointer;
+  }
+
+
+.dd{
+    position: absolute;
+    height: 500px;
+      right: 800%;
+      top: 400%;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+
+
+.textbox6{
+    position: absolute;
+    display: none;
+   margin: 3vh;
+   bottom: 3%;
+    border: 4px solid rgb(158, 0, 0);
+    background-color: rgb(55, 55, 55);   
+    width: 50vh;
+    height: 50vh;
+    cursor: pointer;
+    color: yellow;
+    z-index: 4;
+    align-items: center;
+    text-align: center;
+    padding: 2vh;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4vh;
+    z-index: 11;
+    animation: blink-animation 1.5s infinite;
+}
+
+@keyframes blink-animation {
+    0% {
+      text-shadow: none;
+    }
+    50% {
+      text-shadow: 0 0 10px yellow;
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+  
+  .textbox7{
+    position: absolute;
+    display: none;
+   right: 2%;
+    top: 5%;
+   writing-mode: vertical-lr ;
+    border: 4px solid rgb(158, 0, 0);
+    background-color: rgb(55, 55, 55);   
+    width: 60vh;
+    height: 25vh;
+    cursor: pointer;
+    color: red;
+    text-align: left;
+    padding: 2vh;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5vh;
+    z-index: 11;
+    animation: blink-animation 1.5s infinite;
+}
+
+.textbox8{
+    position: absolute;
+    display: none;
+    cursor: pointer;
+    z-index: 11;
+    right: 40vh;
+    bottom: 60vh;
+}
+
+#tardis{
+    position: absolute;
+    height: 20vh;
+}
+
+
+
+
+
+@keyframes blink-animation {
+    0% {
+      text-shadow: none;
+    }
+    50% {
+      text-shadow: 0 0 10px red;
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+
+.a{
+    animation: blink-effect 1s step-end infinite;
+}
+
+
+@keyframes blink-effect {
+  50%{
+    opacity: 0;
+  }
+}
+  
+
+
+#textbox1{
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%, -50%);
+    color: rgb(144, 231, 144); 
+    width: 50vh;
+    height: 20vh;
+    border: 2px solid rgb(0, 177, 64);
+    background-color: black;
+    text-align: left;
+font-family: Verdana, Geneva, Tahoma, sans-serif
+;    
+font-size: 3vh;
+  }
+
+
+.sentece{
+    position: absolute;
+    transform-origin: center;
+    font-size: 100pt;
+    color: white;
+    z-index: 10;
+}

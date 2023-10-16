@@ -1,0 +1,280 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    overflow: hidden;
+    background-color: black;
+}
+@font-face {
+    font-family: 'Doctor';
+    src: url(./Doctor-Who.ttf);
+}
+
+
+.london {
+    position: static;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+} 
+
+
+.mask {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+
+#typing-text {
+    position: absolute;
+    font-size: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em ; /* 타자 치는 효과를 나타내기 위한 커서 효과 */
+    text-align: center;
+    top: 50px;
+    left: 50px;
+    font-family: 'Doctor';
+    color: white;
+  }
+
+
+  
+#typing-text{
+    animation: fadeOut 7s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.textbox {
+    display: none;
+    position: absolute;
+    align-items: center;
+    padding: 2vh ;
+    font-size: 3vh;   
+    color: white;
+    background-color: rgb(0, 0, 0);   
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+  }
+  
+  .visible {
+    display: block;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+
+  #textbox1{
+    left: 10vh;
+    bottom: 10vh;
+    border: 4px solid rgb(158, 0, 0);
+    background-color: rgb(0, 0, 0);   
+    width: 40vh;
+    height: 15vh;
+    cursor: pointer;
+
+  }
+  #textbox2{
+    right: 5vh;
+    bottom: 10vh;
+    border: 4px solid rgb(158, 0, 0);
+    background-color: rgb(0, 0, 0);   
+    width: 40vh;
+    height: 20vh;
+    cursor: pointer;
+  }
+
+  #textbox3{
+    left: 40vh;
+    bottom: 20vh;
+    border: 4px solid rgb(158, 0, 0);
+    background-color: rgb(0, 0, 0);   
+    width: 45vh;
+    height: 10vh;
+    text-align: left;
+
+  }
+
+  #textbox4{
+    right: 10vh;
+    top: 10vh;
+    border: 4px solid rgb(158, 0, 0);
+    background-color: rgb(0, 0, 0);   
+    width: 40vh;
+    height: 18vh;
+  }
+
+  #textbox5{
+    position: absolute;
+    top: 4%;
+    right: 10%;
+    margin: auto;
+  }
+
+  #kid {
+      position: absolute;
+      top: 30%;
+      right: 100%;
+      width: 15vh;
+      cursor: pointer;
+      z-index: 6;
+      transform: rotate(-30deg);
+      display: none;
+  }
+
+  .mask1{
+    position: absolute;
+    height: 90vh;
+    left: -40vh;
+    top: -100%;
+    z-index: 2;
+    animation: moveI 1s linear 2s forwards;
+    opacity: 0;
+    }
+
+    @keyframes moveI {
+      0%{
+        opacity: 1;
+        top:-500px;
+      }
+      100%{
+        opacity: 1;
+        top:0px;
+      }
+    }
+  
+
+
+
+  .mask2{
+    position: absolute;
+    height: 110vh;
+    right: 70vh;
+    top: -100%;
+    z-index: 2;
+    animation: moveImage 1s linear  2.5s forwards;
+    opacity: 0;
+  }
+
+  @keyframes moveImage {
+    0%{
+      opacity: 1;
+      top:800px;
+    }
+    100%{
+      top:-100px;
+      opacity: 1;
+    }
+      
+  }
+
+
+.mask3{
+  position: absolute;
+  height: 25vh;
+    right: 80vh;
+    top: 35vh;
+    z-index: 4;
+    animation: move 1s linear forwards; 
+    cursor:pointer ;
+  }
+
+  @keyframes move {
+    0%{
+      top:600px;
+    }
+    100%{
+      top:120px;
+    }
+  }
+
+  .mask4{
+    position: absolute;
+    height: 90vh;
+      right: 0vh;
+      top: 20vh;
+      z-index: 3;
+      cursor: pointer;
+     animation: move 1s linear forwards;
+
+    }
+
+    @keyframes move {
+      0%{
+        top:600px;
+      }
+      100%{
+        top:120px;
+      }
+    }
+  
+
+
+
+.textbox6{
+  position: absolute;
+  display: none;
+  left: 20%;
+  bottom:30%;
+  border: 1vh solid rgb(158, 0, 0);
+  background-color: rgb(0, 0, 0);   
+  width: 20vh;
+  height: 10vh;
+  cursor: pointer;
+  color: white;
+  z-index: 4;
+  align-items: center;
+  text-align: left;
+  padding: 2vh;
+  font-family: 'DOCTOR';
+  font-size: 4vh;
+}
+
+.textbox7{
+  position: absolute;
+  display: none;
+  left: 30%;
+  bottom:10%;
+  border: 1vh solid rgb(158, 0, 0);
+  background-color: rgb(0, 0, 0);   
+  height: 20vh;
+  width: 60vh;
+  color: white;
+  z-index: 4;
+  align-items: center;
+  text-align: left;
+  padding: 2vh;
+  font-family: 'DOCTOR';
+  font-size: 10vh;
+  line-height: 10vh;
+  cursor: pointer;
+}
+
+.textbox8{
+  position: absolute;
+  display: none;
+  right:20%;
+  top:25%;
+  border: 2vh solid rgb(158, 0, 0);
+  background-color: white;
+  height: 30vh;
+  color: black;
+  z-index: 4;
+  align-items: center;
+  font-family: 'DOCTOR';
+  font-size: 35vh;
+  line-height: 30vh;
+  z-index: 5;
+}
